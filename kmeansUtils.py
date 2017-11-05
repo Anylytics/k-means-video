@@ -4,9 +4,9 @@ from utils.STRTools import str_groupBy, str_parallel
 import numpy as np
 from scipy.spatial.distance import cdist
 
-def computeKMeans(image):
+def computeKMeans(image, n_clusters=5):
 #    image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-    clt = KMeans(n_clusters = 5)
+    clt = KMeans(n_clusters = n_clusters)
     imReshaped = image.reshape((image.shape[0] * image.shape[1], 3))
     clt.fit(imReshaped)
     
